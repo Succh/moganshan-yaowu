@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>江南瑶坞·莫干山 | 国庆网红打卡全机位攻略</title>
+<style>
+:root{
+  --ink:#0a1f15; --ink2:#0f2a1e; --ink3:#163828;
+  --bamboo:#3da574; --bamboo2:#7fd4a6; --jade:#a8e8c0;
+  --gold:#e8b84b; --gold2:#f5d78e;
+  --water:#2bb6a8; --water2:#6fd8c8;
+  --paper:#eefaf4; --muted:#8fb8a4;
+  --line:rgba(120,210,170,.2);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:var(--ink);color:var(--paper);
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.75;overflow-x:hidden}
+a{color:var(--bamboo2);text-decoration:none}
+img{display:block;max-width:100%}
+.wrap{max-width:1200px;margin:0 auto;padding:0 20px}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:90;
+  background:rgba(10,31,21,.85);backdrop-filter:blur(14px);
+  border-bottom:1px solid var(--line)}
+.nav-in{max-width:1200px;margin:0 auto;padding:10px 20px;
+  display:flex;align-items:center;gap:14px;
+  overflow-x:auto;scrollbar-width:none}
+.nav-in::-webkit-scrollbar{display:none}
+.nav-logo{font-weight:800;color:var(--gold);white-space:nowrap;font-size:15px}
+nav a.nl{color:var(--muted);font-size:13px;white-space:nowrap;padding:4px 8px;border-bottom:2px solid transparent;transition:.2s}
+nav a.nl:hover{color:var(--jade)}
+nav a.nl.act{color:var(--bamboo2);border-bottom-color:var(--bamboo)}
+/* hero */
+header.hero{min-height:100vh;position:relative;display:flex;align-items:center;
+  background:linear-gradient(rgba(10,31,21,.5),rgba(10,31,21,.88)),url('img/bamboo_lake.jpg') center/cover fixed}
+.hero-in{position:relative;z-index:2;width:100%;text-align:center;padding:120px 20px 80px}
+.kicker{display:inline-block;font-size:12px;letter-spacing:3px;color:var(--gold2);
+  border:1px solid rgba(232,184,75,.4);border-radius:30px;padding:6px 18px;margin-bottom:20px;
+  background:rgba(232,184,75,.07)}
+h1{font-size:clamp(28px,5.5vw,54px);line-height:1.25;font-weight:800;letter-spacing:1px}
+h1 em{font-style:normal;color:var(--bamboo2)}
+.sub{margin-top:14px;color:var(--muted);font-size:clamp(13px,1.5vw,16px);letter-spacing:.5px}
+.cd{display:flex;justify-content:center;gap:12px;margin-top:30px;flex-wrap:wrap}
+.cd-cell{background:rgba(20,48,34,.6);border:1px solid var(--line);border-radius:14px;padding:12px 18px;min-width:80px;backdrop-filter:blur(6px)}
+.cd-num{font-size:28px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1.1}
+.cd-lab{font-size:11px;color:var(--muted);letter-spacing:1px;margin-top:2px}
+.cd-txt{margin-top:16px;font-size:14px;color:var(--jade)}
+/* section */
+section{padding:76px 0;border-top:1px solid var(--line);scroll-margin-top:60px}
+.sec-head{margin-bottom:28px}
+.sec-num{font-size:12px;letter-spacing:4px;color:var(--gold);font-weight:700}
+.sec-head h2{font-size:clamp(22px,3.4vw,32px);margin-top:6px;font-weight:800}
+.sec-head p{color:var(--muted);margin-top:8px;font-size:14.5px;max-width:760px}
+/* tabs */
+.tabs{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+.tab{cursor:pointer;border:1px solid var(--line);background:var(--ink2);color:var(--muted);
+  padding:10px 20px;border-radius:12px;font-size:14px;transition:.22s;font-family:inherit}
+.tab:hover{border-color:var(--bamboo);color:var(--jade)}
+.tab.on{background:linear-gradient(135deg,var(--bamboo),#2a7a52);color:#06150d;font-weight:700;border-color:transparent}
+.panel{display:none;animation:fade .35s ease}
+.panel.on{display:block}
+@keyframes fade{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+/* timeline */
+.tl{position:relative;padding-left:8px}
+.tl::before{content:"";position:absolute;left:68px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--bamboo),transparent)}
+.tl-item{display:flex;gap:20px;margin-bottom:22px;align-items:flex-start}
+.tl-day{flex:0 0 60px;text-align:right;font-weight:800;font-size:13px;color:var(--gold);padding-top:12px;letter-spacing:.5px}
+.tl-day span{display:block;font-weight:400;font-size:10px;color:var(--muted);margin-top:2px}
+.tl-body{flex:1;background:linear-gradient(135deg,rgba(20,48,34,.75),rgba(15,35,25,.8));
+  border:1px solid var(--line);border-left:3px solid var(--bamboo);border-radius:14px;padding:16px 18px;position:relative}
+.tl-body h4{font-size:16px;color:var(--jade);margin-bottom:6px;font-weight:700}
+.tl-body p{font-size:13.5px;color:var(--muted);margin-bottom:8px}
+.tl-body ul{list-style:none;display:flex;flex-direction:column;gap:5px}
+.tl-body li{font-size:13.3px;padding-left:4px;opacity:.94}
+/* cards */
+.grid{display:grid;gap:16px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:linear-gradient(150deg,rgba(20,48,34,.78),rgba(14,30,22,.82));
+  border:1px solid var(--line);border-radius:16px;overflow:hidden;transition:.28s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-4px);border-color:rgba(120,210,170,.42);box-shadow:0 14px 30px rgba(0,0,0,.35)}
+.card-img{height:180px;overflow:hidden;position:relative;background:var(--ink3)}
+.card-img img{width:100%;height:100%;object-fit:cover;transition:.5s}
+.card:hover .card-img img{transform:scale(1.06)}
+.card-tag{position:absolute;top:10px;left:10px;background:rgba(10,31,21,.75);color:var(--gold2);
+  font-size:11px;padding:3px 10px;border-radius:20px;backdrop-filter:blur(6px);border:1px solid rgba(232,184,75,.3)}
+.card-bd{padding:14px 16px;flex:1;display:flex;flex-direction:column;gap:6px}
+.card-bd h4{font-size:15.5px;color:var(--jade)}
+.card-bd p{font-size:13px;color:var(--muted);flex:1}
+.price{color:var(--gold);font-weight:700;font-size:14px}
+/* table */
+.tbl-wrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px}
+table{width:100%;border-collapse:collapse;font-size:13.5px;min-width:580px}
+th,td{padding:11px 14px;text-align:left;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:rgba(20,48,34,.85);color:var(--bamboo2);font-weight:700;font-size:12.5px;letter-spacing:.5px}
+tr:last-child td{border-bottom:none}
+tbody tr:hover{background:rgba(60,160,110,.06)}
+td.hl{color:var(--gold);font-weight:700}
+/* transport compare */
+.trans-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+@media(max-width:680px){.trans-grid{grid-template-columns:1fr}}
+.trans-card{background:linear-gradient(140deg,rgba(20,48,34,.8),rgba(14,30,22,.85));
+  border:1px solid var(--line);border-radius:16px;padding:22px;position:relative}
+.trans-card.rec{border-color:rgba(120,210,170,.5);box-shadow:0 0 30px rgba(60,160,110,.12)}
+.trans-card h3{font-size:18px;color:var(--jade);margin-bottom:4px;font-weight:700}
+.trans-card .badge{display:inline-block;font-size:11px;padding:2px 10px;border-radius:20px;margin-bottom:12px}
+.trans-card.rec .badge{background:rgba(60,160,110,.25);color:var(--bamboo2)}
+.trans-card.alt .badge{background:rgba(232,184,75,.18);color:var(--gold2)}
+.trans-card ul{list-style:none;display:flex;flex-direction:column;gap:7px;margin-bottom:14px}
+.trans-card li{font-size:13.3px;color:var(--muted);display:flex;gap:8px;align-items:flex-start}
+.trans-card li::before{content:"·";color:var(--bamboo);font-weight:700;flex-shrink:0}
+.trans-card .cost{font-size:22px;font-weight:800;color:var(--gold);margin-top:6px}
+.trans-card .cost small{font-size:12px;color:var(--muted);font-weight:400}
+.rec-tag{position:absolute;top:14px;right:14px;background:var(--bamboo);color:#06150d;font-size:11px;font-weight:700;padding:3px 10px;border-radius:20px}
+/* photo spot */
+.spot-card{background:linear-gradient(145deg,rgba(20,48,34,.8),rgba(14,30,22,.85));
+  border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.spot-card-img{height:200px;overflow:hidden;position:relative}
+.spot-card-img img{width:100%;height:100%;object-fit:cover}
+.spot-num{position:absolute;top:12px;left:12px;width:32px;height:32px;border-radius:50%;
+  background:var(--bamboo);color:#06150d;font-weight:800;font-size:15px;display:flex;align-items:center;justify-content:center}
+.spot-card-bd{padding:16px}
+.spot-card-bd h4{font-size:16px;color:var(--jade);margin-bottom:6px;font-weight:700}
+.spot-card-bd p{font-size:13px;color:var(--muted);margin-bottom:8px}
+.spot-tag{display:inline-block;font-size:11px;padding:3px 8px;border-radius:10px;
+  background:rgba(40,180,130,.15);color:var(--water2);margin-right:6px;margin-bottom:4px}
+.spot-tip{font-size:12.5px;color:var(--gold2);margin-top:6px;border-top:1px dashed rgba(120,210,170,.2);padding-top:8px}
+/* gallery */
+.gal{display:grid;gap:10px;grid-template-columns:repeat(auto-fit,minmax(180px,1fr))}
+.gal img{width:100%;height:180px;object-fit:cover;border-radius:12px;cursor:zoom-in;transition:.3s;border:1px solid var(--line)}
+.gal img:hover{transform:scale(1.03);border-color:var(--bamboo)}
+.lb{position:fixed;inset:0;background:rgba(5,12,8,.94);z-index:200;display:none;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+.lb.on{display:flex;animation:fade .25s}
+.lb img{max-width:94%;max-height:90vh;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.6)}
+/* progress + checklist */
+.progress{height:8px;background:var(--ink3);border-radius:20px;overflow:hidden;margin:6px 0 20px}
+.progress i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--bamboo),var(--gold));border-radius:20px;transition:width .4s}
+.chk{display:grid;gap:9px;grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+.chk label{display:flex;align-items:center;gap:10px;background:rgba(15,35,25,.7);
+  border:1px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;font-size:13.3px;transition:.2s;user-select:none}
+.chk label:hover{border-color:var(--bamboo)}
+.chk input{appearance:none;width:18px;height:18px;min-width:18px;border:2px solid var(--bamboo);border-radius:6px;position:relative;cursor:pointer;background:transparent}
+.chk input:checked{background:var(--bamboo)}
+.chk input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#06150d;font-size:12px;font-weight:900}
+.chk label:has(input:checked) span{text-decoration:line-through;opacity:.5}
+/* budget */
+.bd-row{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px dashed var(--line);font-size:13.5px}
+.bd-row:last-of-type{border-bottom:none}
+.bd-row input{appearance:none;width:18px;height:18px;min-width:18px;border:2px solid var(--bamboo);border-radius:6px;position:relative;cursor:pointer}
+.bd-row input:checked{background:var(--bamboo)}
+.bd-row input:checked::after{content:"✓";position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:#06150d;font-size:12px;font-weight:900}
+.bd-row .nm{flex:1}
+.bd-row .vl{color:var(--gold);font-weight:700;font-variant-numeric:tabular-nums}
+.bd-total{margin-top:16px;padding:16px 20px;border-radius:14px;
+  background:linear-gradient(135deg,rgba(60,160,110,.16),rgba(232,184,75,.12));
+  border:1px solid rgba(232,184,75,.3);display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:10px}
+.bd-total b{font-size:24px;color:var(--gold);font-variant-numeric:tabular-nums}
+/* accordion */
+.acc{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:rgba(15,35,25,.55)}
+.acc-item+.acc-item{border-top:1px solid var(--line)}
+.acc-h{padding:15px 18px;cursor:pointer;display:flex;align-items:center;gap:10px;font-size:14.5px;font-weight:600;transition:.2s;user-select:none}
+.acc-h:hover{background:rgba(60,160,110,.06)}
+.acc-h .arr{margin-left:auto;color:var(--bamboo);transition:.3s;font-size:12px}
+.acc-item.open .acc-h{color:var(--jade);background:rgba(60,160,110,.08)}
+.acc-item.open .acc-h .arr{transform:rotate(180deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.acc-b-in{padding:0 18px 16px 48px;font-size:13.3px;color:var(--muted)}
+/* kv */
+.kv{display:grid;gap:12px;grid-template-columns:repeat(auto-fit,minmax(150px,1fr))}
+.kv-c{background:rgba(15,35,25,.65);border:1px solid var(--line);border-radius:14px;padding:16px;text-align:center}
+.kv-c .n{font-size:26px;font-weight:800;color:var(--gold);line-height:1.15}
+.kv-c .l{font-size:12px;color:var(--muted);margin-top:5px;letter-spacing:.5px}
+/* note */
+.note{background:linear-gradient(135deg,rgba(232,184,75,.08),rgba(40,180,130,.08));
+  border:1px solid rgba(232,184,75,.28);border-left:3px solid var(--gold);
+  border-radius:12px;padding:13px 16px;font-size:13.3px;color:var(--jade);margin-top:16px}
+.note b{color:var(--gold2)}
+/* top btn */
+#top{position:fixed;right:18px;bottom:22px;width:44px;height:44px;border-radius:50%;
+  background:linear-gradient(135deg,var(--bamboo),#2a7a52);color:#06150d;border:none;
+  font-size:18px;cursor:pointer;display:none;align-items:center;justify-content:center;
+  box-shadow:0 6px 20px rgba(0,0,0,.4);z-index:95}
+#top.on{display:flex}
+footer{padding:36px 20px 50px;text-align:center;color:var(--muted);font-size:12.5px;border-top:1px solid var(--line)}
+@media(max-width:640px){
+  .tl::before{left:8px}
+  .tl-item{flex-direction:column;gap:8px}
+  .tl-day{text-align:left;padding-top:0}
+  .tl-day span{display:inline;margin-left:8px}
+  section{padding:56px 0}
+}
+</style>
+</head>
+<body>
+<nav>
+  <div class="nav-in">
+    <span class="nav-logo">🎋 江南瑶坞·莫干山</span>
+    <a class="nl" href="#transport">怎么去</a>
+    <a class="nl" href="#plan">玩什么</a>
+    <a class="nl" href="#spots">打卡机位</a>
+    <a class="nl" href="#stay">住哪里</a>
+    <a class="nl" href="#money">预算</a>
+    <a class="nl" href="#tips">避坑</a>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="hero-in">
+    <span class="kicker">2026国庆 · 苏州园区出发 · 9月30日</span>
+    <h1>莫干山 江南瑶坞<br><em>竹海碧湖 · 网红打卡全机位</em></h1>
+    <p class="sub">索道1100米高空俯瞰"小九寨" · 云端飞车2000米贴地飞行 · 玻璃漂流夜场灯光秀</p>
+    <div class="cd">
+      <div class="cd-cell"><div class="cd-num" id="cd-d">--</div><div class="cd-lab">天</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-h">--</div><div class="cd-lab">时</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-m">--</div><div class="cd-lab">分</div></div>
+      <div class="cd-cell"><div class="cd-num" id="cd-s">--</div><div class="cd-lab">秒</div></div>
+    </div>
+    <p class="cd-txt" id="cd-txt">距离出发 · 收拾行李倒计时</p>
+  </div>
+</header>
+
+<main class="wrap">
+
+<section id="transport">
+  <div class="sec-head">
+    <div class="sec-num">TRANSPORT · 怎么去</div>
+    <h2>自驾 vs 高铁 · 两种方案对比</h2>
+    <p>苏州园区出发，全程约130公里。自驾直达景区门口最省心，高铁+接驳适合不想开车的日子。</p>
+  </div>
+  <div class="trans-grid">
+    <div class="trans-card rec">
+      <span class="rec-tag">推荐 ✅</span>
+      <h3>🚗 自驾（推荐）</h3>
+      <span class="badge">自由度最高</span>
+      <ul>
+        <li>苏州园区出发 → 沪杭高速 → 杭长高速 → 德清出口 → 导航"江南瑶坞旅游度假区"</li>
+        <li>全程约 2 小时，过路费约 ¥60-70</li>
+        <li><b>关键优势：</b>瑶坞是独立度假区，自驾可直接开到景区门口停车场，<b>不受莫干山核心景区限行影响</b></li>
+        <li>停车费约 ¥20-30/天，节假日可能上浮</li>
+        <li>可顺路停靠南浔古镇、庾村广场，灵活安排</li>
+      </ul>
+      <div class="cost">¥200-300 <small>往返油费+停车</small></div>
+    </div>
+    <div class="trans-card alt">
+      <h3>🚄 高铁 + 接驳</h3>
+      <span class="badge">省心之选</span>
+      <ul>
+        <li>苏州站/苏州南站 → 德清站（约35-45分钟，二等座 ¥54）</li>
+        <li>德清站出站 → Y1 旅游专线（¥10，约70分钟到莫干山集散中心）或打车（¥80-100）</li>
+        <li>⚠️ 注意：还需从集散中心再打车/公交到瑶坞村（约30分钟）</li>
+        <li>总耗时约 2.5-3 小时，比自驾多 1 小时</li>
+        <li>适合：不想开车、单人出行、节假日高速堵车风险</li>
+      </ul>
+      <div class="cost">¥200-250 <small>高铁+接驳往返</small></div>
+    </div>
+  </div>
+  <div class="note"><b>阿尚建议：</b>国庆期间高速易堵，<b>建议9月30日早上7:00前出发</b>避开高峰。自驾是唯一能直达景区门口的方式，景区内各项目之间距离较远（索道、飞车、水库分布在不同山头），有车会方便很多。</div>
+</section>
+
+<section id="plan">
+  <div class="sec-head">
+    <div class="sec-num">ITINERARY · 3天2夜</div>
+    <h2>松弛感行程 · 不赶路只拍照</h2>
+    <p>江南瑶坞占地4000亩，建议玩满3天。第一天适应拍照，第二天刷网红项目，第三天睡到自然醒收尾。</p>
+  </div>
+  <div class="tabs">
+    <button class="tab on" data-t="p1">Day 1 · 抵达+水库拍照</button>
+    <button class="tab" data-t="p2">Day 2 · 网红项目刷整天</button>
+    <button class="tab" data-t="p3">Day 3 · 睡醒收尾</button>
+  </div>
+  <div class="panel on" id="p1">
+    <div class="tl">
+      <div class="tl-item"><div class="tl-day">14:00<span>抵达</span></div><div class="tl-body"><h4>抵达景区 & 入住民宿</h4><p>自驾导航至"江南瑶坞旅游度假区-停车场"，办理入住后在民宿附近熟悉环境，傍晚光线先去<b>大斗坞水库</b>踩点，为第二天拍摄找好机位。</p></div></div>
+      <div class="tl-item"><div class="tl-day">16:00<span>黄金时刻</span></div><div class="tl-body"><h4>大斗坞水库 · 踩点拍摄</h4><p>下午4-5点是水库金色时刻，逆光拍摄竹海倒影。沿环湖栈道走一圈，找到"小九寨"最佳机位。</p></div></div>
+      <div class="tl-item"><div class="tl-day">18:00<span>晚餐</span></div><div class="tl-body"><h4>庾村广场觅食</h4><p>山下庾村广场有笋干烧肉、油焖笋、土鸡煲等本地菜，人均¥60-80。饭后散步消食，回民宿休息。</p></div></div>
+    </div>
+  </div>
+  <div class="panel" id="p2">
+    <div class="tl">
+      <div class="tl-item"><div class="tl-day">08:30<span>早起</span></div><div class="tl-body"><h4>索道上山 · 竹海航拍视角</h4><p>索道全长1100米、高差330米，透明轿厢360°观景。清晨竹海薄雾缭绕，<b>轿厢内拍摄</b>（广角/自拍杆）是今日第一波大片。</p></div></div>
+      <div class="tl-item"><div class="tl-day">10:00<span>刺激项目</span></div><div class="tl-body"><h4>云端飞车 · 贴地飞行</h4><p>全长2025米，速度可控，高空俯瞰竹海。<b>拍视频</b>建议用GoPro/手机广角，<b>拍照</b>选在转弯处摄影师抓拍。</p></div></div>
+      <div class="tl-item"><div class="tl-day">12:00<span>午餐</span></div><div class="tl-body"><h4>山顶餐厅/自带干粮</h4><p>景区内有简餐，建议自带三明治/饭团，边吃边拍。山顶视野开阔，适合拍"人在画中游"的意境照。</p></div></div>
+      <div class="tl-item"><div class="tl-day">14:00<span>水库环湖</span></div><div class="tl-body"><h4>大斗坞水库 · 核心机位</h4><p>下午水面平静如镜，是拍倒影最佳时段。沿栈道走到对岸，回望竹海+碧湖+蓝天，九宫格直接拉满。</p></div></div>
+      <div class="tl-item"><div class="tl-day">16:00<span>漂流</span></div><div class="tl-body"><h4>龙吟玻璃漂流 · 日场</h4><p>全长2000米，4+3/3+2/2+1托马斯回旋设计，约6分钟。穿雨衣！手机装防水袋。<b>拍视频</b>用慢动作记录回旋瞬间。</p></div></div>
+      <div class="tl-item"><div class="tl-day">19:00<span>夜场</span></div><div class="tl-body"><h4>灯光夜游 · 漂流夜场</h4><p>夜场漂流有彩色灯光，氛围感拉满。景区还有灯光秀、山野夜市，拍夜景人像绝佳。</p></div></div>
+    </div>
+  </div>
+  <div class="panel" id="p3">
+    <div class="tl">
+      <div class="tl-item"><div class="tl-day">09:00<span>睡醒</span></div><div class="tl-body"><h4>睡到自然醒</h4><p>不赶路，民宿阳台喝杯咖啡，拍拍竹海景致。退房前最后逛一圈纪念品店。</p></div></div>
+      <div class="tl-item"><div class="tl-day">11:00<span>午餐</span></div><div class="tl-body"><h4>最后一顿笋宴</h4><p>推荐笋干烧肉、油焖笋、笋丝面，人均¥50-70。打包一份笋干带走。</p></div></div>
+      <div class="tl-item"><div class="tl-day">13:00<span>返程</span></div><div class="tl-body"><h4>返程苏州</h4><p>建议14:00前上高速，避开下午5点后的返程高峰。到家约16:00-17:00。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="spots">
+  <div class="sec-head">
+    <div class="sec-num">PHOTO SPOTS · 网红打卡机位</div>
+    <h2>9个必拍机位 · 手机党也能出大片</h2>
+    <p>每个机位标注了最佳时间、焦段建议和构图要点，朋友圈九宫格一次集齐。</p>
+  </div>
+  <div class="grid g3">
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">1</span><img src="img/bamboo_lake.jpg" alt="水库倒影"></div>
+      <div class="spot-card-bd">
+        <h4>大斗坞水库 · 倒影九宫格</h4>
+        <p>碧绿水色配金色光斑，下午4-5点逆光拍倒影最绝。低角度贴近水面，竹海+碧湖+天空三分构图。</p>
+        <span class="spot-tag">下午4-5点</span><span class="spot-tag">广角/长焦</span>
+        <div class="spot-tip">💡 带长焦压缩画面，压缩感更强</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">2</span><img src="img/bamboo_forest.jpg" alt="索道竹海"></div>
+      <div class="spot-card-bd">
+        <h4>索道轿厢 · 360°竹海大片</h4>
+        <p>1100米索道，透明轿厢无死角观景。清晨薄雾时拍最有仙境感。自拍+竹海背景，广角镜头收纳更多。</p>
+        <span class="spot-tag">清晨/上午</span><span class="spot-tag">广角自拍</span>
+        <div class="spot-tip">💡 手机开广角+倒数自拍，或请同轿厢游客帮忙</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">3</span><img src="img/forest_path.jpg" alt="林间小径"></div>
+      <div class="spot-card-bd">
+        <h4>环湖栈道 · 人在画中游</h4>
+        <p>水库沿线栈道蜿蜒，前景点缀竹子和岩石。走几步回头拍，纵深感拉满。适合拍全身人像。</p>
+        <span class="spot-tag">全天</span><span class="spot-tag">35-50mm</span>
+        <div class="spot-tip">💡 让摄影师走远点，用中焦拍更自然</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">4</span><img src="img/bamboo_hill.jpg" alt="云端飞车"></div>
+      <div class="spot-card-bd">
+        <h4>云端飞车 · 速度感大片</h4>
+        <p>2025米飞车轨道蜿蜒在竹海之上，转弯处最出片。拍视频建议GoPro第一视角，拍照让同伴在弯道侧拍。</p>
+        <span class="spot-tag">上午/下午</span><span class="spot-tag">广角抓拍</span>
+        <div class="spot-tip">💡 摄影师站在轨道外侧，用1/500s高速快门冻结</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">5</span><img src="img/lake_mountain.jpg" alt="山顶俯瞰"></div>
+      <div class="spot-card-bd">
+        <h4>山顶观景台 · 上帝视角</h4>
+        <p>索道终点站附近有小九寨全景观景台，竹海、碧湖、远山三层叠叠。拍延时或广角大片绝佳。</p>
+        <span class="spot-tag">清晨/傍晚</span><span class="spot-tag">超广角</span>
+        <div class="spot-tip">💡 用全景模式从左到右扫一张超宽幅</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">6</span><img src="img/waterfall.jpg" alt="竹海瀑布"></div>
+      <div class="spot-card-bd">
+        <h4>竹海瀑布 · 慢门丝绸感</h4>
+        <p>景区内有人造瀑布，配竹海背景。用三脚架+慢门1/4s，拍出丝绸般的流水。手机专业模式也可。</p>
+        <span class="spot-tag">阴天/傍晚</span><span class="spot-tag">三脚架慢门</span>
+        <div class="spot-tip">💡 手机专业模式ISO 100、快门1/4s</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">7</span><img src="img/lake_sunset.jpg" alt="日落剪影"></div>
+      <div class="spot-card-bd">
+        <h4>水库日落 · 剪影时刻</h4>
+        <p>傍晚时分，以落日为背景拍人物剪影。水面金光粼粼，拍背影或侧影都很有电影感。</p>
+        <span class="spot-tag">日落前30分钟</span><span class="spot-tag">剪影/逆光</span>
+        <div class="spot-tip">💡 降低曝光补偿，让天空不过曝</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">8</span><img src="img/misty_forest.jpg" alt="雾中竹海"></div>
+      <div class="spot-card-bd">
+        <h4>夜场灯光 · 赛博竹海</h4>
+        <p>漂流夜场有彩色灯光，竹海在灯光下呈现蓝紫色调。拍人像建议用大光圈镜头，虚化光斑。</p>
+        <span class="spot-tag">夜场17:00后</span><span class="spot-tag">大光圈</span>
+        <div class="spot-tip">💡 手机开"夜景模式"或专业模式ISO 800</div>
+      </div>
+    </div>
+    <div class="spot-card">
+      <div class="spot-card-img"><span class="spot-num">9</span><img src="img/hillside_stay.jpg" alt="民宿打卡"></div>
+      <div class="spot-card-bd">
+        <h4>半山民宿 · 阳台大片</h4>
+        <p>选对民宿，阳台就是天然落地窗景。清晨薄雾+竹海，坐在阳台喝咖啡随手一拍都是杂志封面。</p>
+        <span class="spot-tag">清晨/上午</span><span class="spot-tag">中焦/手机</span>
+        <div class="spot-tip">💡 让摄影师蹲低仰拍，纳入更多竹海</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="stay">
+  <div class="sec-head">
+    <div class="sec-num">STAY · 住哪里</div>
+    <h2>三种住宿方案 · 从¥500到¥2000</h2>
+    <p>瑶坞景区内有配套民宿/酒店，山下的庾村、莫干山镇也有大量选择。按预算和体验偏好选。</p>
+  </div>
+  <div class="grid g3">
+    <div class="card">
+      <div class="card-img"><span class="card-tag">性价比</span><img src="img/hillside_stay.jpg" alt="山下民宿"></div>
+      <div class="card-bd">
+        <h4>山脚庾村民宿</h4>
+        <p>莫干山镇/庾村一带，吃饭方便，到景区约20分钟车程。选择多，品质参差不齐需甄别。</p>
+        <span class="price">¥500-900/晚</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">推荐</span><img src="img/autumn_park.jpg" alt="景区内民宿"></div>
+      <div class="card-bd">
+        <h4>景区内/瑶坞村民宿</h4>
+        <p>步行可达索道站和水库，省去往返交通时间。部分民宿含门票套餐，性价比高。</p>
+        <span class="price">¥800-1500/晚</span>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-img"><span class="card-tag">奢享</span><img src="img/forest_trees.jpg" alt="高端度假村"></div>
+      <div class="card-bd">
+        <h4>高端度假酒店</h4>
+        <p>裸心谷、法国山居等顶级民宿，私密竹海+无边泳池。预算充足直接冲。</p>
+        <span class="price">¥2000-4000/晚</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="money">
+  <div class="sec-head">
+    <div class="sec-num">BUDGET · 预算计算</div>
+    <h2>一人3天2夜 · 大约花多少？</h2>
+    <p>勾选你想体验的项目，实时计算总花费。按"舒适版"配置约¥1800/人。</p>
+  </div>
+  <div id="bd-list">
+    <div class="bd-row"><input type="checkbox" checked data-v="200"><span class="nm">🚗 自驾油费+过路费（往返）</span><span class="vl">¥200</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="150"><span class="nm">🅿️ 停车费（3天）</span><span class="vl">¥150</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="200"><span class="nm">🏨 住宿2晚（景区内民宿，2人分摊）</span><span class="vl">¥200</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="120"><span class="nm">🎫 景区门票+索道套票</span><span class="vl">¥120</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="150"><span class="nm">🚡 云端飞车（单项目）</span><span class="vl">¥150</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="180"><span class="nm">🌊 龙吟玻璃漂流（日+夜场）</span><span class="vl">¥180</span></div>
+    <div class="bd-row"><input type="checkbox" checked data-v="400"><span class="nm">🍜 餐饮（6顿正餐，含一顿好的）</span><span class="vl">¥400</span></div>
+    <div class="bd-row"><input type="checkbox" data-v="100"><span class="nm">🛍️ 伴手礼（笋干、茶叶等）</span><span class="vl">¥100</span></div>
+    <div class="bd-row"><input type="checkbox" data-v="80"><span class="nm">☕ 咖啡/下午茶</span><span class="vl">¥80</span></div>
+  </div>
+  <div class="bd-total"><span>合计（一人）</span><b id="bd-sum">¥1580</b></div>
+  <div class="note"><b>省钱技巧：</b>门票+索道+项目的<b>套票</b>比单买便宜约20%；工作日比节假日住宿便宜30-40%；自带干粮午餐可再省¥100。</div>
+</section>
+
+<section id="pack">
+  <div class="sec-head">
+    <div class="sec-num">PACKING · 行李清单</div>
+    <h2>出发前 · 勾选你的打包进度</h2>
+    <p>瑶坞项目多，装备要齐全。勾选一项少一项，全齐了直接出发！</p>
+  </div>
+  <div class="progress"><i id="pack-bar"></i></div>
+  <p id="pack-pct" style="font-size:13px;color:var(--muted);margin-bottom:16px">已打包 0 / 12 件</p>
+  <div class="chk" id="pack-list">
+    <label><input type="checkbox"><span>📱 手机+广角镜头/自拍杆</span></label>
+    <label><input type="checkbox"><span>🔋 充电宝 20000mAh</span></label>
+    <label><input type="checkbox"><span>👟 防滑运动鞋/溯溪鞋</span></label>
+    <label><input type="checkbox"><span>🧥 速干衣+薄外套（山上温差大）</span></label>
+    <label><input type="checkbox"><span>🩳 多备一套换洗衣物</span></label>
+    <label><input type="checkbox"><span>🧴 防晒霜+墨镜+帽子</span></label>
+    <label><input type="checkbox"><span>🌂 一次性雨衣（漂流用）</span></label>
+    <label><input type="checkbox"><span>💳 身份证（住酒店+购票）</span></label>
+    <label><input type="checkbox"><span>💊 晕车药+创可贴</span></label>
+    <label><input type="checkbox"><span>🍫 能量棒/士力架</span></label>
+    <label><input type="checkbox"><span>📷 GoPro/相机（拍视频）</span></label>
+    <label><input type="checkbox"><span>🎒 轻便双肩包（解放双手）</span></label>
+  </div>
+</section>
+
+<section id="tips">
+  <div class="sec-head">
+    <div class="sec-num">TIPS · 避坑贴士</div>
+    <h2>这5件事 · 阿尚替你踩过的坑</h2>
+    <p>国庆人多，提前做好准备才能玩得爽。</p>
+  </div>
+  <div class="acc" id="acc">
+    <div class="acc-item">
+      <div class="acc-h">1. 门票买套票！单买贵一半 <span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>景区门票+索道+飞车+漂流的<b>四项目套票</b>约¥380-420，单买加起来要¥600+。各大OTA平台提前一天购买，刷二维码入园。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h">2. 国庆必须提前预约！ <span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>国庆期间景区每日限流，<b>至少提前1-3天在公众号/OTA预约</b>。现场购票可能无票，或者排长队。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h">3. 山上吃饭贵且难吃 <span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>景区内餐饮选择少、价格高（快餐¥50-80）。建议自带三明治/饭团当正餐，<b>晚餐下山去庾村</b>吃。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h">4. 索道/飞车遇大风会停运 <span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>天气不好时高空项目可能暂停。<b>提前查天气</b>，尽量把索道和飞车安排在Day2上午（天气通常较好）。</p></div></div>
+    </div>
+    <div class="acc-item">
+      <div class="acc-h">5. 漂流会湿身！ <span class="arr">▼</span></div>
+      <div class="acc-b"><div class="acc-b-in"><p>龙吟漂流全程2000米，即使穿雨衣也会湿。<b>多备一套衣服</b>，手机必须装防水袋。漂流后景区有冲洗间。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="data">
+  <div class="sec-head">
+    <div class="sec-num">KEY DATA · 关键数据</div>
+    <h2>一图看懂 · 出发前最后扫一眼</h2>
+  </div>
+  <div class="kv">
+    <div class="kv-c"><div class="n">9.30-10.2</div><div class="l">行程日期</div></div>
+    <div class="kv-c"><div class="n">130km</div><div class="l">苏州→瑶坞距离</div></div>
+    <div class="kv-c"><div class="n">2h</div><div class="l">自驾耗时</div></div>
+    <div class="kv-c"><div class="n">4000亩</div><div class="l">景区面积</div></div>
+    <div class="kv-c"><div class="n">1100m</div><div class="l">索道全长</div></div>
+    <div class="kv-c"><div class="n">2025m</div><div class="l">云端飞车</div></div>
+    <div class="kv-c"><div class="n">2000m</div><div class="l">玻璃漂流</div></div>
+    <div class="kv-c"><div class="n">¥1580</div><div class="l">舒适版人均</div></div>
+  </div>
+  <div style="margin-top:30px">
+    <div class="sec-num" style="margin-bottom:12px">GALLERY · 竹海画廊</div>
+    <div class="gal">
+      <img src="img/bamboo_lake.jpg" alt="竹湖">
+      <img src="img/bamboo_forest.jpg" alt="竹海">
+      <img src="img/waterfall.jpg" alt="瀑布">
+      <img src="img/autumn_park.jpg" alt="秋色">
+      <img src="img/forest_path.jpg" alt="林径">
+      <img src="img/lake_sunset.jpg" alt="日落">
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  🎋 江南瑶坞·莫干山 · 国庆网红打卡全机位攻略<br>
+  苏州园区出发 · 9月30日 · 竹海碧湖 · 3天2夜松弛假期<br>
+  <span style="opacity:.6">手制于 Operit · 慢慢来，比较快</span>
+</footer>
+
+<div class="lb" id="lb"><img id="lb-img" src="" alt=""></div>
+<button id="top" aria-label="回到顶部">↑</button>
+
+<script>
+(function(){
+"use strict";
+var $=function(s,c){return (c||document).querySelector(s)};
+var $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+/* 倒计时 */
+var goTime=new Date("2026-09-30T07:00:00+08:00").getTime();
+function cd(){
+  var d=goTime-Date.now();
+  if(d<=0){$("#cd-txt").textContent="出发啦！竹海见 🎋";$$(".cd-num").forEach(function(n){n.textContent="0"});return}
+  var s=Math.floor(d/1000);
+  $("#cd-d").textContent=Math.floor(s/86400);
+  $("#cd-h").textContent=Math.floor(s%86400/3600);
+  $("#cd-m").textContent=Math.floor(s%3600/60);
+  $("#cd-s").textContent=s%60;
+  $("#cd-txt").textContent="距离出发 · 收拾行李倒计时";
+  setTimeout(cd,1000);
+}
+cd();
+/* Tab切换 */
+$$(".tab").forEach(function(t){
+  t.addEventListener("click",function(){
+    $$(".tab").forEach(function(x){x.classList.remove("on")});
+    t.classList.add("on");
+    $$(".panel").forEach(function(p){p.classList.remove("on")});
+    $("#"+t.dataset.t).classList.add("on");
+  });
+});
+/* 手风琴 */
+$$(".acc-h").forEach(function(h){
+  h.addEventListener("click",function(){
+    var item=h.parentElement,b=item.querySelector(".acc-b"),open=item.classList.contains("open");
+    $$(".acc-item.open").forEach(function(o){o.classList.remove("open");o.querySelector(".acc-b").style.maxHeight=null});
+    if(!open){item.classList.add("open");b.style.maxHeight=b.scrollHeight+"px"}
+  });
+});
+/* 灯箱 */
+var lb=$("#lb");
+$$(".gal img").forEach(function(im){
+  im.addEventListener("click",function(){$("#lb-img").src=im.src;lb.classList.add("on")});
+});
+lb.addEventListener("click",function(){lb.classList.remove("on")});
+/* 清单进度 */
+function packUpd(){
+  var bs=$$("#pack-list input"),done=bs.filter(function(b){return b.checked}).length;
+  $("#pack-bar").style.width=(done/bs.length*100)+"%";
+  $("#pack-pct").textContent="已打包 "+done+" / "+bs.length+" 件"+(done===bs.length?" · 全齐了，出发！🎉":"");
+}
+$$("#pack-list input").forEach(function(b){b.addEventListener("change",packUpd)});
+packUpd();
+/* 预算计算 */
+function bdUpd(){
+  var sum=0;
+  $$("#bd-list input:checked").forEach(function(b){sum+=+b.dataset.v});
+  $("#bd-sum").textContent="¥"+sum;
+}
+$$("#bd-list input").forEach(function(b){b.addEventListener("change",bdUpd)});
+bdUpd();
+/* 回到顶部+导航高亮 */
+var topBtn=$("#top");
+window.addEventListener("scroll",function(){
+  topBtn.classList.toggle("on",window.scrollY>600);
+  var cur="";
+  $$("main section").forEach(function(sec){
+    if(window.scrollY>=sec.offsetTop-120)cur=sec.id;
+  });
+  $$("nav a.nl").forEach(function(a){a.classList.toggle("act",a.getAttribute("href")==="#"+cur)});
+},{passive:true});
+topBtn.addEventListener("click",function(){window.scrollTo({top:0,behavior:"smooth"})});
+})();
+</script>
+</body>
+</html>
